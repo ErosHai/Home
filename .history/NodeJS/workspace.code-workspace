@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "..\\..\\..\\Vue"
+		},
+		{
+			"path": "..\\..\\..\\React"
+		}
+	],
+  "settings": {
+    "liveServer.settings.port": 5593,
+    "liveServer.settings.multiRootWorkspaceName": "Vue"
+  }
+}

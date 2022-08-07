@@ -1,0 +1,1 @@
+(()=>{"use strict";function o(o,n){return o*n}console.log("xiaoming"),console.log(15),console.log(o(5,4)),(new class{run(){console.log("run")}}).run(),console.log("杭州市"),console.log(o(63,2))})();

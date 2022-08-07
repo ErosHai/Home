@@ -1,0 +1,1 @@
+const arr = ['zhangsan', 'lisi', 'zhaowu']

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <div v-if="booksList.length">
+        <!-- <input type="text" v-model="msg" />-->
+        <input type="text" :value="msg" @input="msg = $event.target.value" />
+        {{msg}}
+
+        <h2 v-for="(item,index) in booksList">{{ item.price | showPrice }}</h2>
+        <h2>{{ totalPrice | showPrice }}</h2>
+
+        <h2 v-for="(item,index) in booksList">
+          <p>{{item}}</p>
+          <button @click="decrement(index)" :disabled="item.id <= 0">-</button>
+          {{ item.id }}
+          <button @click="increment(index)">+</button>
+          <button @click="removeHandle(index)">移除</button>
+        </h2>
+      </div>
+
+      <h2 v-else>购物车为空</h2>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script>
+      let app = new Vue({
+        el: "#app",
+        data: {
+          msg: "hello",
+          firstName: "Jamus",
+          lastName: "Tom",
+          booksList: [
+            {
+              id: 1,
+              name: "小王子",
+              price: 30,
+            },
+            {
+              id: 3,
+              name: "挪威的森林",
+              price: 50,
+            },
+            {
+              id: 1,
+              name: "百年孤独",
+              price: 120,
+            },
+          ],
+        },
+        methods: {
+          removeHandle(index) {
+            this.booksList.splice(index, 1);
+          },
+          increment(index) {
+            console.log("increment", index);
+            this.booksList[index].id++;
+          },
+          decrement(index) {
+            console.log("decrement", index);
+            this.booksList[index].id--;
+          },
+          changeInput(event) {
+            this.msg = event.target.value;
+          },
+          getFull() {
+            return this.firstName + " " + this.lastName;
+          },
+        },
+        computed: {
+          allName: {
+            set: function () {},
+            get: function () {
+              return "abc";
+            },
+          },
+          fullName() {
+            return this.firstName + " " + this.lastName;
+          },
+          totalPrice() {
+            // let num = 0;
+            // this.booksList.map((item, index) => {
+            //   num += item.price;
+            // });
+            // console.log(num);
+            // return num;
+
+            for (let i of this.booksList) {
+              // console.log(i.price);s
+            }
+            return 100;
+          },
+        },
+        filters: {
+          showPrice(price) {
+            return "￥" + price.toFixed(2);
+          },
+        },
+      });
+    </script>
+
+    <script>
+      const num = [51, 4556, 7658, 67, 879, 78, 98, 9, 809, 45];
+
+      // let total = num
+      //   .filter(function (n) {
+      //     return n > 50;
+      //   })
+      //   .map(function (n) {
+      //     return n * 2;
+      //   })
+      //   .reduce(function (prevValue, n) {
+      //     return prevValue + n;
+      //   }, 0);
+
+      let total = num
+        .filter((n) => n > 50)
+        .map((n) => n * 2)
+        .reduce((prev, n) => prev + n);
+
+      console.log(total);
+    </script>
+  </body>
+</html>

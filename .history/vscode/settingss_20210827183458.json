@@ -1,0 +1,145 @@
+{
+    "editor.letterSpacing": 0.9,
+    "terminal.integrated.fontFamily": "monospace",
+    "editor.fontSize": 18,
+    "workbench.preferredDarkColorTheme": "Monokai",
+    // "editor.formatOnSave": true,
+    "liveServer.settings.donotShowInfoMsg": true,
+    "[css]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[html]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "git.autofetch": true,
+    "explorer.confirmDragAndDrop": false,
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "editor.linkedEditing": true,
+    "files.exclude": {
+      "**/.classpath": true,
+      "**/.project": true,
+      "**/.settings": true,
+      "**/.factorypath": true
+    },
+    "files.autoSave": "onFocusChange",
+    "files.defaultLanguage": "html",
+    "editor.fontFamily": "'Fira Code',Menlo, Monaco, 'Courier New', monospace\",",
+    "editor.fontLigatures": false,
+    "editor.cursorSmoothCaretAnimation": true,
+    "gitlens.advanced.blame.customArguments": [],
+    "terminal.integrated.automationShell.windows": "",
+    "terminal.integrated.cursorBlinking": true,
+    "liveSassCompile.settings.autoprefix": [],
+    "liveSassCompile.settings.excludeList": [
+  
+      "**/node_modules/**",
+      ".vscode/**"
+    ],
+    "liveSassCompile.settings.formats": [
+  
+      {
+        "format": "expanded",
+        "extensionName": ".css",
+        "savePath": null
+      }
+      
+    ],
+    "editor.fontWeight": 380,
+    "terminal.integrated.letterSpacing": 1.2,
+    "terminal.integrated.fontSize": 17,
+  //   "launch": {
+  
+  //  "version": "0.1.0",
+  //     "configurations": [
+  //         {
+  //             "type": "browser-preview",
+  //             "request": "attach",
+  //             "name": "Browser Preview: Attach"
+  //         },    
+  //         {
+  //             "type": "browser-preview",
+  //             "request": "launch",
+  //             "name": "Browser Preview: Launch",
+  //             "url": "http://localhost:3000"
+  //         }
+  //     ]
+  //   },
+    "browser-preview.verbose": true,
+    "json.schemas": [
+    
+    ],
+    "sync.gist": "e7f612c50218187a00a8c1f4afc9fe0c",
+    "workbench.iconTheme": "material-icon-theme",
+    "material-icon-theme.activeIconPack": "vue_vuex",
+    "materialTheme.accent": "Breaking Bad",
+    "liveServer.settings.CustomBrowser": "chrome",
+    "liveServer.settings.useBrowserPreview": true,
+    "liveServer.settings.ChromeDebuggingAttachment": true,
+    "editor.definitionLinkOpensInPeek": true,
+    "gitlens.advanced.messages": {
+      "suppressGitMissingWarning": true
+    },
+    "editor.tabSize": 2,
+    "editor.wordWrap": "on",
+    "remote.downloadExtensionsLocally": true,
+    "workbench.editor.scrollToSwitchTabs": true,
+    "editor.mouseWheelZoom": true,
+    "settingsSync.ignoredExtensions": [
+    
+    ],
+    "security.workspace.trust.untrustedFiles": "open",
+    "terminal.integrated.automationShell.linux": "",
+    "terminal.integrated.allowMnemonics": true,
+    "gitlens.gitCommands.skipConfirmations": [
+      "fetch:command",
+      "stash-push:command",
+      "switch:command",
+      "push:command"
+    ],
+    "[markdown]": {
+      "editor.defaultFormatter": "yzhang.markdown-all-in-one"
+    },
+    "[json]": {
+      "editor.defaultFormatter": "HookyQR.beautify"
+    },
+    "[javascript]": {
+      "editor.defaultFormatter": "HookyQR.beautify"
+    },
+    "explorer.confirmDelete": false,
+    "[jsonc]": {
+      "editor.defaultFormatter": "HookyQR.beautify"
+  },
+  "workbench.startupEditor": "none",
+  "vsicons.dontShowNewVersionMessage": true,
+  "beautify.config": "",  
+  "editor.formatOnSave": true,
+  "vetur.grammar.customBlocks": {
+    "docs": "md",
+    "i18n": "json"
+  },
+  "workbench.colorTheme": "One Dark Pro",
+  "terminal.integrated.defaultProfile.windows": "PowerShell",
+  "window.zoomLevel": 1,
+  "mssql.connections": [
+    {
+      "server": "{{put-server-name-here}}",
+      "database": "{{put-database-name-here}}",
+      "user": "{{put-username-here}}",
+      "password": "{{put-password-here}}"
+    }
+  ],
+  "search.collapseResults": "auto",
+  "kite.showWelcomeNotificationOnStartup": false,
+  "editor.renderControlCharacters": true,
+  // "editor.codeActionsOnSave": null,
+  "editor.tabCompletion": "on",
+  "notebook.lineNumbers": "on",
+  }
+  // 去除自动格式化时js加的分号与双引号
+  // "vetur.format.defaultFormatterOptions": {
+  //   "prettier": {
+  //       "semi": false,
+  //       "singleQuote": true
+  //   }
+  // }

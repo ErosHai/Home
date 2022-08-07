@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <cpn :c-msg="msg" :cbook="book"></cpn>
+      {{msg}}
+    </div>
+
+    <template id="cpn">
+      <div>
+        <h1>{{cMsg}}</h1>
+        <h1>{{`${cMsg} ${cbook}`}}</h1>
+        <ul>
+          <li v-for="item in cbook">{{ item }}</li>
+        </ul>
+      </div>
+    </template>
+
+    <!-- <script type="text/x-template" id="cpn">
+      <div>
+        <h2>nihao</h2>
+      </div>
+    </script> -->
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+
+    <script>
+      // const cpnC = Vue.extend({
+      //   template: ` <h2>This is title  ${Date()} </h2> `,
+      // });
+      const cpn = {
+        template: "#cpn",
+        props: {
+          cMsg: {
+            type: String,
+            default: "abc",
+            required: true,
+          },
+          cbook: {
+            type: Array,
+          },
+        },
+      };
+
+      const vm = new Vue({
+        el: "#app",
+        data: {
+          msg: "hello world",
+          book: ["小王子", "百年孤独", "挪威的森林"],
+        },
+        components: {
+          cpn,
+        },
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <cpn>
+        <template slot-scope="slot">
+          <!-- <span v-for="item in slot.data">{{ item }} - </span> -->
+          <span> {{slot.data.join(' -- ')}} </span>
+        </template>
+      </cpn>
+      <cpn><h1 slot="left">left</h1></cpn>
+      <cpn> <h2 slot="right">right</h2></cpn>
+    </div>
+
+    <template id="cpn">
+      <div>
+        <slot name="left"> </slot>
+        <slot name="right"> </slot>
+        <slot :data="bookList"></slot>
+      </div>
+    </template>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script>
+      const vm = new Vue({
+        el: "#app",
+        components: {
+          cpn: {
+            template: "#cpn",
+            data() {
+              return {
+                bookList: ["小王子", "被讨厌的勇气", "挪威的森林"],
+              };
+            },
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

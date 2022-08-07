@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+		<link rel="icon" href="<%= BASE_URL %>favicon.ico" />
+		<title><%= htmlWebpackPlugin.options.title %></title>
+	</head>
+	<body>
+		<noscript>
+			<strong
+				>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work
+				properly without JavaScript enabled. Please enable it to
+				continue.</strong
+			>
+		</noscript>
+		<div id="app"></div>
+		<!-- built files will be auto injected -->
+
+		<script>
+			const a = num => num * num
+			console.log(a(20), '箭头函数写法')
+
+			function sum(...num) {
+				let sums = 0
+				num.forEach(v => (sums += v))
+				return sums
+			}
+			console.log(sum(13, 3, 2, 1, 2, 2))
+
+			// js 数组常用方法
+			const arr = [2, 424, 235, 45, 436, 7]
+			arr.push(33, 22) //数组最后面新增值
+			arr.pop() //删除数组最后面的值
+			arr.unshift(11) //数组最前面新增值
+			arr.shift() //删除数组的第一个值
+
+			/* splice
+				第一个参数表示从数组的第几个位置开始
+				第一个参数表示从数组的第几个位置开始
+				第一个参数表示从数组的第几个位置开始 
+			*/
+
+			arr.splice(0, 0, 123)
+			console.log(arr)
+		</script>
+	</body>
+</html>

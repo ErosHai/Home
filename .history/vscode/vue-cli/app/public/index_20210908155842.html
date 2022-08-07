@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+		<link rel="icon" href="<%= BASE_URL %>favicon.ico" />
+		<title><%= htmlWebpackPlugin.options.title %></title>
+	</head>
+	<body>
+		<noscript>
+			<strong
+				>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work
+				properly without JavaScript enabled. Please enable it to
+				continue.</strong
+			>
+		</noscript>
+		<div id="app"></div>
+		<!-- built files will be auto injected -->
+
+		<script>
+			const a = num => num * num
+			console.log(a(20), '箭头函数写法')
+
+			function sum(...num) {
+				let sums = 0
+				num.forEach(v => (sums += v))
+				return sums
+			}
+			console.log(sum(13, 3, 2, 1, 2, 2))
+
+			// js 数组常用方法
+			const arr = [1, 2, 31, 52, 61, 7]
+			arr.push(8, 9) //数组最后面新增值
+			arr.pop() //删除数组最后面的值
+			arr.unshift(0) //数组最前面新增值
+			arr.shift() //删除数组的第一个值
+
+			/* splice
+				第一个参数表示从数组的第几个位置开始
+				第二个参数表示从当前位置开始删除几个值，为0时表示不删除，改为插入新值
+				第三个参数表示从要插入的新值，或者是替换几个值
+			*/
+			arr.splice(0, 0, 0)
+			arr.splice(0, 2, -1, -2) //从第0个值开始，替换为2个新值aaa,bbb
+			arr.reverse() //反转数组里的值
+			console.log(arr)
+			let num = arr.sort() // 数组排序
+			console.log(num)
+
+			var arrs = ['General', 'Tom', 'Bob', 'John', 'Army']
+			var resArr = arrs.sort()
+			console.log(resArr) //输出   ["Army", "Bob", "General", "John", "Tom"]
+		</script>
+	</body>
+</html>

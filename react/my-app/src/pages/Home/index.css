@@ -1,0 +1,53 @@
+body {
+  background-color: #202124;
+  color: white;
+}
+
+.app {
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+input {
+  width: 100%;
+  height: 30px;
+}
+
+.btn {
+  width: 100%;
+  padding: 10px 20px;
+  margin: 10px 0;
+  background-color: #dc3545;
+  color: #ffffff;
+  border: 1px solid #e78992;
+  border-radius: 5px;
+  cursor: pointer;
+}
+button:hover{
+  opacity: 0.8;
+}
+.list {
+  padding: 10px;
+}
+
+.item {
+  border-bottom: 1px solid #ffffff;
+  margin: 50px 0;
+  padding: 10px;
+  height: 80px;
+}
+
+.delete {
+  float: right;
+  padding: 10px 20px;
+  background-color: #dc3545;
+  border: 1px solid #dc3545;
+  border-radius: 5px;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+span{
+  margin-right: 30px;
+}

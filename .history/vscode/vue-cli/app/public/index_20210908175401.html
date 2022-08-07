@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+		<link rel="icon" href="<%= BASE_URL %>favicon.ico" />
+		<title><%= htmlWebpackPlugin.options.title %></title>
+	</head>
+	<body>
+		<noscript>
+			<strong
+				>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work
+				properly without JavaScript enabled. Please enable it to
+				continue.</strong
+			>
+		</noscript>
+		<div id="app"></div>
+		<!-- built files will be auto injected -->
+
+		<script>
+			const a = num => num * num
+			console.log(a(20), '箭头函数写法')
+
+			function sum(...num) {
+				let sums = 0
+				num.forEach(v => (sums += v))
+				return sums
+			}
+			console.log(sum(13, 3, 2, 1, 2, 2))
+
+			// js 数组常用方法
+			const arr = [1, 2, 31, 52, 61, 7]
+			arr.push(8, 9) //数组最后面新增值
+			arr.pop() //删除数组最后面的值
+			arr.unshift(0) //数组最前面新增值
+			arr.shift() //删除数组的第一个值
+
+			/* splice
+				第一个参数表示从数组的第几个位置开始
+				第二个参数表示从当前位置开始删除几个值，为0时表示不删除，改为插入新值
+				第三个参数表示从要插入的新值，或者是替换几个值
+			*/
+			arr.splice(0, 0, 0)
+			arr.splice(0, 2, -1, -2) //从第0个值开始，替换为2个新值aaa,bbb
+			arr.reverse() //反转数组里的值
+			console.log(arr)
+
+			let nums = [12, 32, 55, 768, 5, 146, 461]
+			let number = nums.sort() // 将不会按照数值大小排序，按照字符编码的顺序进行排序
+			console.log(' sort没有参数默认根据ASCII码进行排序', number)
+
+			let arrNum = nums.sort((a, b) => a - b) // 升序排序
+			// let arrNums = nums.sort((a, b) => b - a) // 降序排序
+			console.log('sort里面是函数有参数可以根据数值大小排序', arrNum)
+
+			var arrs = ['General', 'Tom', 'Bob', 'John', 'Army']
+			var resArr = arrs.sort()
+			console.log(resArr) //输出   ["Army", "Bob", "General", "John", "Tom"]
+
+			for (let i in nums) {
+				console.log(nums[i], 'fon in')
+			}
+
+			for (let i of nums) {
+				console.log(i, 'for of')
+			}
+			nums.forEach(v => console.log(v, 'forEach'))
+			nums.map((item, index) => console.log(index + '-' + item, 'map'))
+
+			/*  js高阶函数 filter/map/reduce filter-过滤 map-循环 reduce-汇总
+				filter中的回调函数必要 一个Boolean值
+				为true，函数内部会将这次回调的n加入到新数组中
+				为false，函数内部会过滤掉n
+			*/
+			let newArr = nums.filter(n => n < 100)
+			console.log(newArr)
+			let new2Arr = newArr.map(n => n * 2)
+			console.log(new2Arr)
+			let total = new2Arr.reduce((pre, n) => pre + n, 0)
+			console.log(total)
+			sum(1, 1)
+		</script>
+	</body>
+</html>

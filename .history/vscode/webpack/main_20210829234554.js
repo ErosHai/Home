@@ -1,0 +1,1 @@
+const {name, sum} = require(./src/js/bbb.js)

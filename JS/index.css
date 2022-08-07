@@ -1,0 +1,37 @@
+body {
+  background: #202124;
+  color: #d0d9e1;
+  font-size: 20px;
+  margin: 0 auto;
+}
+
+.app {
+  width: 50%;
+  margin: 0 auto;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+button {
+  width: 100%;
+  margin: 20px;
+  padding: 10px 50px;
+  border-radius: 5px;
+}
+
+#add {
+  background-color: #7078e5;
+  color: #d0d9e1;
+}
+
+#delete{
+  background-color: #d97575;
+  color: #d0d9e1;
+}
+
+#item{
+  border-bottom: 1px solid white;
+}

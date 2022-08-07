@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <cpn
+        :number1="num1"
+        :number2="num2"
+        @event-num1="cpnNum1"
+        @event-num2="cpnNum2"
+      ></cpn>
+      <cpn ref="reference">
+        <h1>hahaha</h1>
+        <h1>heheheheh</h1>
+      </cpn>
+      <cpn></cpn>
+      <button @click="btnClick">btn</button>
+    </div>
+
+    <template id="cpn">
+      <div>
+        <slot> <h1>hello</h1> </slot>
+        <slot name="center"></slot>
+        <h1>父组件的数据: {{ number1 }}</h1>
+        <h1>子组件的数据: {{ dataNum1 }}</h1>
+        dataNum1: <input type="text" v-model="dataNum1" />
+        <!-- <input type="text" :value="dataNum1" @input="inputNum1" /> -->
+        <h1>props: {{ number2 }}</h1>
+        <h1>data: {{ dataNum2 }}</h1>
+        dataNum2: <input type="text" v-model="dataNum2" />
+        <!-- <input type="text" :value="dataNum2" @input="inputNum2" /> -->
+      </div>
+    </template>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+
+    <script>
+      const vm = new Vue({
+        el: "#app",
+        data: {
+          num1: 0,
+          num2: 1,
+        },
+        methods: {
+          btnClick() {
+            // for (const msg of this.$children) {
+            //   console.log(this.$children);
+            //   console.log(msg.name);
+            // }
+            console.log(this.$refs.reference.showMsg());
+          },
+          cpnNum1(value) {
+            let numbe = parseFloat(value);
+            this.num1 = numbe;
+          },
+          cpnNum2(value) {
+            this.num2 = parseFloat(value);
+          },
+        },
+        components: {
+          cpn: {
+            template: "#cpn",
+            methods: {
+              showMsg() {
+                // console.log("showMsg", "子组件");
+                console.log(this.$parent.num2);
+              },
+              // inputNum1(event) {
+              //   this.dataNum1 = event.target.value;
+              //   this.$emit("event-num1", this.dataNum1);
+              //   this.dataNum2 = this.dataNum1 * 100;
+              //   this.$emit("event-num2", this.dataNum2);
+              // },
+              // inputNum2(event) {
+              //   this.dataNum2 = event.target.value;
+              //   this.$emit("event-num2", this.dataNum2);
+              //   this.dataNum1 = this.dataNum2 / 100;
+              //   this.$emit("event-num1", this.dataNum1);
+              // },
+            },
+            props: {
+              number1: Number,
+              number2: Number,
+            },
+            watch: {
+              dataNum1(newValue) {
+                this.dataNum2 = newValue * 100;
+                this.$emit("event-num1", newValue);
+              },
+              dataNum2(newValue) {
+                this.dataNum1 = newValue / 100;
+                this.$emit("event-num2", newValue);
+              },
+            },
+            data() {
+              return {
+                name: "我是子组件的数据",
+                dataNum1: this.number1,
+                dataNum2: this.number2,
+              };
+            },
+          },
+        },
+      });
+    </script>
+  </body>
+</html>
